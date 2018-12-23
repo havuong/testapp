@@ -70,14 +70,19 @@ public class CommonFunctions {
     }
 
     public static void click(How how, String locator) {
-        waitForElement(how, locator, 30);
+        waitForElement(how, locator, 15);
         getElement(how, locator).click();
     }
 
     public static void fill(How how, String locator, String withText) {
-        waitForElement(how, locator, 30);
+        waitForElement(how, locator, 15);
         getElement(how, locator).clear();
         getElement(how, locator).sendKeys(withText);
+    }
+
+    public static boolean isElementDisplayed(How how,String locator){
+        waitForElement(how,locator,15);
+        return getElement(how, locator).isDisplayed();
     }
 }
 
